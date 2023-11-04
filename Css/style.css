@@ -1,0 +1,607 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;700&family=Poppins:wght@200;300;400;500;700&display=swap');
+*, * ::before, * ::after{
+    padding:0;
+    margin:0;
+    box-sizing:borderbox;
+}
+html{
+    font-size:62.5%;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+ .btn{
+    text-decoration:none;
+    background:white;
+    color:black;
+    border:2px solid black;
+    border-radius:12px;
+    padding:0.7rem 0.8rem;
+    display:inline-block;
+    font-weight:500;
+    text-transform:uppercase;
+    font-size:1rem;
+    text-align:center;
+ }
+/***********************************UTILITY CLASS*****************/
+.container{
+    max-width:1200px;
+    margin:auto;
+    width:90%;
+}
+
+/******************************NAVBAR STYLE*************************/
+
+/******************************DESKTOP MODE*************************/
+
+.nav-bar input[type="checkbox"], .nav-bar .hamburger-lines{
+    display:none;
+}
+
+.nav-bar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    width:100%;
+    background:#fff;
+    opacity:0.85;
+    position:fixed;
+    z-index:999;
+
+}
+
+.nav-wrapper{
+    /* box-shadow:0 5px 10px 0 #aaa; */
+    height:64px;
+    /* background:white; */
+    /* color:black; */
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.menu-items{
+    display:flex;
+    order:2;
+}
+
+.logo{
+    order:1;
+    font-size:2rem;
+    margin-bottom:0.5rem;
+}
+
+.menu-items a{
+    text-decoration:none;
+    color:black;
+    background:white;
+    border-radius:10px;
+}
+.menu-items li{
+    list-style:none;
+    font-size:1.8rem;
+    margin-left:1.5rem;
+    margin-bottom:0.5rem;
+}
+
+.menu-items a:hover{
+    color:white;
+    background:black;
+    border:2px solid white;
+    border-radius:10px;
+}
+
+/*********************SHOWCASE-AREA**********************/
+.showcase-area{
+    height:50vh;
+    background-image:url("../Images/rice.jpeg");
+     background-repeat:no-repeat;
+     background-size:cover;
+     background-position:right center;
+}
+.showcase-container{
+    display:flex;
+     flex-direction:column;  
+    justify-content:center;
+    align-items:center;
+    height:100%;
+    font-size:1.6rem;
+}
+
+.title{
+
+    text-shadow: 2px 2px 5px white;
+    font-size:3rem;
+    font-weight:700;
+    text-transform:uppercase;
+}
+
+.showcase-container p{
+    text-shadow: 2px 2px 5px white;
+    font-size:1.6rem;
+    font-weight:700;
+}
+
+/******************************ABOUT US*******************/
+
+.about-us{
+    padding:4rem 0rem;
+    background:#f5f5f7;
+}
+
+.about-wrapper{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.about-text{
+    flex: 1 1 400px;
+    margin:auto;
+    padding:30px;
+    transform:translateX(-150%);
+    animation:about-text-animation 1s ease-in-out forwards;
+}
+
+.about-text h2{
+    font-size:3.2rem;
+}
+
+.about-text p{
+    font-size:1.6rem;
+}
+
+.about-image{
+    padding:30px;
+    flex:1 1 500px;
+    transform:translateX(150%);
+    animation:about-image-animation 1s ease-in-out forwards;
+}
+
+.about-image img{
+    display:block;
+    height:300px;
+    max-width:100%;
+    margin:auto;
+    object-fit:cover;
+    object-position:center;
+}
+
+@keyframes about-image-animation{
+    100%{
+        transform:translate(0);
+    }
+}
+
+@keyframes about-text-animation{
+    100%{
+        transform:translate(0);
+    }
+}
+
+/************************************FOOD-TYPE***************************/
+
+.food{
+    padding:5rem 0 10rem 0;
+}
+
+.food h2{
+    text-align:center;
+    font-size:3rem;
+    font-weight:400;
+    text-transform:uppercase;
+    color:#555;
+    margin-bottom:40px;
+}
+
+.food-wrapper{
+    display:flex;
+    justify-content:space-around;
+    /* border:2px solid green; */
+}
+
+
+.food-wrapper img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    object-position:center;
+}
+
+.img-container{
+    position:relative;
+    margin:0 1rem;
+    /* border:2px solid red; */
+}
+
+ .food-type:hover .img-content{
+    opacity:1;
+    top:40%; 
+} 
+
+.img-content{
+    position:absolute;
+    top:70%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    opacity:1;
+    transition:all 0.2s ease-in-out;
+    text-align:center;
+    opacity:0;
+    z-index:2;
+}
+
+.img-content h3{
+    color:#fff;
+    font-size:3rem;
+}
+
+.img-content a{
+    font-size:1.3rem;
+}
+
+.img-container::after{
+    content:"";
+    display:block;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    position:absolute;
+    top:0;
+    left:0;
+    opacity:0;
+    transform:scaleY(0);
+    transform-origin:100% 100%;
+    z-index:1;
+    transition:all 0.2s ease-in-out;
+}
+
+.img-container:hover::after{
+    opacity:1;
+    transform:scaleY(1);
+}
+
+/************************************MENU***************************/
+   .menu-wrapper{ 
+    display:flex;
+    flex-wrap:wrap;
+    padding:5rem 0 3rem 0;
+ 
+}
+.menu-heading{
+    font-size:4rem;
+    text-align:center;
+    font-weight:400;
+    color:#666;
+}
+
+.menu-img img{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center;
+}
+
+.ul-items{
+    flex:1 1 400px;  
+    display:flex;
+    margin-bottom:3rem;
+    justify-content:space-evenly; 
+} 
+.menu-text{
+    margin:auto 1.5rem;
+} 
+
+.menu-title{
+    font-size:2.2rem;
+    font-weight:600;
+    color:#444;
+}
+
+.menu-p{
+    font-size:1rem;
+    font-weight:500;
+    color:#555;
+}
+
+.price{
+    color:#117964;
+    font-weight:300;
+    font-size:1rem;
+}
+
+
+/*****************TESTIMONIALS*************/
+.testimonials{
+    margin:3rem;
+    padding: 5rem 0;
+    background:rgb(243,243,243);
+}
+
+.testimonial-wrapper{
+    display:flex;
+    justify-content:space-between;
+    padding:1rem;
+}
+
+.testimonial-box{
+    padding-right:1rem;
+    margin-right:3rem;
+    text-align:center;
+}
+
+
+.testimonial-box .fa{
+    color:#ff9529;
+}
+
+.customer-picture .t-text{
+    font-weight:500;
+    font-size:1.5rem;
+    display:block;
+    margin-bottom:1rem;
+}
+.customer-picture .testimonial-text{
+    font-weight:300;
+    font-size:1rem;
+}
+
+.customer-picture img{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    object-fit:cover;
+    object-position:center;
+    margin:1rem 0;
+}
+
+.h2-title{
+    text-align:center;
+    padding-bottom:3rem;
+    font-size:3rem;
+    color:#555;
+}
+
+/*******************MEDIA QUERIES****************/
+
+/*********FOR SMALL SCREENS*******/
+@media(max-width: 500px){
+    /*This media is going to apply to max-width:500px */
+    html{
+        font-size:50%;
+    }
+    .ul-items{
+        flex-direction:column;
+        text-align:center;
+    }
+    .testimonial-wrapper{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .contact-wrapper{
+        flex-direction:column;
+    }
+
+}
+
+/***********CONTACT US****************/
+
+.contact-us{
+    padding: 5rem 0;
+    background:rgb(226,226,226);
+}
+
+.contact-wrapper{
+    display:flex;
+    border:2px solid #fff;
+}
+
+.img-div{
+    width:50%;
+}
+
+.img-div img{
+    display:block;
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    object-position:center;
+}
+
+.form-wrapper{
+    width:50%;
+    padding:1rem;
+    margin:auto;
+    text-align:center;
+}
+
+.form-wrapper input{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:2px solid #ddd;
+    padding:1rem 0;
+    outline:none;
+    box-shadow:none;
+    font-weight:700;
+    margin-bottom:1rem;
+    color:#444;
+}
+
+.form-wrapper textarea{
+    display:block;
+    width:100%;
+    border:none;
+    border-bottom:2px solid #ddd;
+    padding:1rem 0;
+    font-weight:700;
+    color:#444;
+}
+
+.contact-title{
+    font-size:3rem;
+    font-weight:500;
+    text-align:center;
+    margin-bottom:1rem;
+    color:#444;
+}
+
+.submit{
+    font-size:1.3rem;
+    
+}
+
+/********************************COPY********************/
+
+.footer{
+    text-align:center;
+    font-size:1.7rem;
+    font-weight:300;
+    padding:3rem 0;
+    background:rgb(65,65,65);
+    color:#fff;
+}
+
+/**************************MEDIA QUERY********************/
+
+@media(max-width:768px){
+
+    .nav-bar input[type="checkbox"], .nav-bar .hamburger-lines{
+        display:block;
+    }
+
+
+    .nav-wrapper{
+    display:block; 
+    position:relative;
+    height:64px;
+   }
+
+    input[type="checkbox"]{
+    height:32px;
+    width:30px;
+    position:absolute;
+    top:17px;
+    left:20px;
+    opacity:0;
+    z-index:5;
+   }
+
+    .nav-bar .hamburger-lines{
+    height:23px;
+    width:35px;
+    display:flex; 
+    flex-direction:column; 
+    justify-content:space-between; 
+    position:absolute;
+    top:17px;
+    left:20px;
+    z-index:3;
+   }
+
+    .hamburger-lines .line{
+    display:block;
+    /* margin-top:5px; */
+    height:4px;
+    background:#333;
+    
+   }
+
+   .menu-items{
+    display:flex;
+    flex-direction:column;
+    background:#fff;
+    height:100vh;
+    max-width:300px;
+    margin-left:-40px;
+    padding-left:100px;
+    padding-top:10rem;
+    transform:translateX(-150%);
+    transition: 0.4s ease-in-out;
+   }
+
+   .menu-items li{
+    margin-bottom:1.5rem;
+    padding-bottom:2rem;
+    font-size:2rem;
+    font-weight:500;
+    border-bottom:2px solid black;
+   }
+
+    .logo{
+    position:absolute; 
+    top:10px; 
+    right:15px; 
+   }
+
+   .nav-wrapper input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+    transform-origin: 0% 0%;
+    transform:rotate(35deg);
+    transition:transform 0.4s ease-out; 
+    }
+
+    .nav-wrapper input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+    transform-origin: 0% 0%;
+    transform:rotate(-35deg);
+    transition:transform 0.4s ease-out; 
+    }
+
+    .nav-wrapper input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+    display:none;
+    }
+
+    .nav-wrapper input[type="checkbox"]:checked ~ .menu-items{
+    transform:translateX(0);
+    transition:0.4s ease-in-out;
+    box-shadow:4px 4px 20px grey;
+    }
+
+    /********************FOOD MENU MEDIA QUERY************************/
+    .food-wrapper{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .food-type{
+        margin-bottom:3rem;
+        box-shadow:5px 5px 10px 0px #aaa;
+    }
+
+    .img-container{
+        margin:0;
+    }
+    /**************TESTIMONIAL****************/
+    .testimonial-wrapper{
+        display:flex;
+        flex-direction:column;
+        text-align:center;
+    }
+    
+}
+
+@media(max-width:500px){
+    html{
+        font-size:50%;
+    }
+
+    .testimonial-wrapper{
+        display:flex;
+        flex-direction:column;
+        text-align:center;
+    }
+
+    /********************CONTACT SECTION****************/
+    .form-wrapper{
+        width:90%;
+    }
+
+    .contact-wrapper{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .img-div{
+        width:90%;
+        margin:3rem auto;
+    }
+}
